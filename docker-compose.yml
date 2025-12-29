@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: interview_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: interview
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"          # ⬅️ Docker Postgres на 5433
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  mongo:
+    image: mongo:7
+    container_name: interview_mongo
+    restart: always
+    ports:
+      - "27017:27017"        # ⬅️ Mongo ТОЛЬКО на 27017
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  pg_data:
+  mongo_data:

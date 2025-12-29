@@ -1,0 +1,57 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-card {
+  background: #121212;
+  color: white;
+  width: 320px;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 255, 180, 0.15);
+  animation: pop 0.25s ease-out;
+}
+
+.modal-card h2 {
+  margin-bottom: 8px;
+}
+
+.modal-card p {
+  color: #ccc;
+  margin-bottom: 12px;
+}
+
+.modal-card ul {
+  text-align: left;
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+
+.modal-card button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #00ffcc, #00ffaa);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
